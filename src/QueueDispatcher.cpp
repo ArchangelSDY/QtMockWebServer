@@ -1,6 +1,8 @@
 #include <QDebug>
 
+#include "MockResponse.h"
 #include "QueueDispatcher.h"
+#include "RecordedRequest.h"
 
 QueueDispatcher::QueueDispatcher() :
     m_failFastResponse(0)

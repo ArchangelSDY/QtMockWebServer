@@ -1,9 +1,10 @@
 #ifndef MOCKRESPONSE_H
 #define MOCKRESPONSE_H
 
-#include <QBuffer>
 #include <QList>
 #include <QString>
+
+class QBuffer;
 
 class MockResponse
 {

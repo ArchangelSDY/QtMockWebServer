@@ -1,15 +1,16 @@
 #ifndef QTMOCKWEBSERVER_H
 #define QTMOCKWEBSERVER_H
 
+#include <QObject>
 #include <QQueue>
-#include <QString>
 
-#include "Dispatcher.h"
-#include "MockResponse.h"
-#include "RecordedRequest.h"
-
+class QString;
 class QTcpSocket;
+class QUrl;
+class Dispatcher;
+class MockResponse;
 class ThreadTcpServer;
+class RecordedRequest;
 
 class QtMockWebServer : public QObject
 {

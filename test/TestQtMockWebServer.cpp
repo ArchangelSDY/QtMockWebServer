@@ -6,6 +6,7 @@
 #include <QThread>
 
 #include "MockResponse.h"
+#include "RecordedRequest.h"
 #include "TestQtMockWebServer.h"
 
 void TestQtMockWebServer::init()

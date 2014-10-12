@@ -4,7 +4,8 @@
 #include <QQueue>
 
 #include "Dispatcher.h"
-#include "MockResponse.h"
+
+class MockResponse;
 
 class QueueDispatcher : public Dispatcher
 {

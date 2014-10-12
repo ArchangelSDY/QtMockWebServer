@@ -6,8 +6,11 @@
 #include <QThreadPool>
 #include <QUrl>
 
+#include "Dispatcher.h"
+#include "MockResponse.h"
 #include "QtMockWebServer.h"
 #include "QueueDispatcher.h"
+#include "RecordedRequest.h"
 
 class ConnectionHandler : public QRunnable
 {
