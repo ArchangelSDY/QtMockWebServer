@@ -14,6 +14,8 @@ private slots:
     void cleanup();
     void regularResponse();
     void expect100ContinueWithBody();
+    void expect100ContinueWithoutBody();
+    void redirect();
 
 private:
     void waitForReply(QNetworkReply *reply);
