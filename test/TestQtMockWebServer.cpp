@@ -2,8 +2,6 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QSignalSpy>
-#include <QEventLoop>
-#include <QThread>
 
 #include "MockResponse.h"
 #include "RecordedRequest.h"
@@ -22,9 +20,10 @@ void TestQtMockWebServer::cleanup()
 
 void TestQtMockWebServer::waitForReply(QNetworkReply *reply)
 {
-    QEventLoop loop;
-    QObject::connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
-    loop.exec();
+    QSignalSpy spy(reply, SIGNAL(finished()));
+    bool finished = spy.wait();
+    QVERIFY2(finished, "No reply responsed");
+    QCOMPARE(spy.count(), 1);
 }
 
 void TestQtMockWebServer::regularResponse()
@@ -60,9 +59,7 @@ void TestQtMockWebServer::expect100ContinueWithBody()
     expReq.setRawHeader(QByteArray("Expect"), QByteArray("100-continue"));
 
     QNetworkReply *reply = m_mgr.put(expReq, QByteArray("hello"));
-    QSignalSpy sigSpy(reply, SIGNAL(finished()));
-    sigSpy.wait();
-    QCOMPARE(sigSpy.count(), 1);
+    waitForReply(reply);
 
     RecordedRequest actReq = m_mockServer->takeRequest();
     QCOMPARE(m_mockServer->requestCount(), 1);
