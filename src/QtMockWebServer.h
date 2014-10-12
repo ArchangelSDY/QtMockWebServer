@@ -3,15 +3,19 @@
 
 #include <QQueue>
 #include <QString>
-#include <QTcpServer>
 
 #include "Dispatcher.h"
 #include "MockResponse.h"
 #include "RecordedRequest.h"
 
+class QTcpSocket;
+class ThreadTcpServer;
+
 class QtMockWebServer : public QObject
 {
     Q_OBJECT
+
+    friend class ConnectionHandler;
 public:
     QtMockWebServer();
     ~QtMockWebServer();
@@ -34,9 +38,6 @@ public:
 
     void setDispatcher(Dispatcher *dispatcher);
 
-private slots:
-    void newConnection();
-
 private:
     bool processOneRequest(QTcpSocket *socket, int &sequenceNumber);
     RecordedRequest readRequest(QTcpSocket *socket, int &sequenceNumber);
@@ -45,10 +46,11 @@ private:
     void writeResponse(QTcpSocket *socket, const MockResponse &response);
 
     QQueue<RecordedRequest> m_requestQueue;
+    QAtomicInt m_requestCount;
     int m_port;
     int m_bodyLimit;
     Dispatcher *m_dispatcher;
-    QTcpServer *m_server;
+    ThreadTcpServer *m_server;
 };
 
 #endif // QTMOCKWEBSERVER_H
