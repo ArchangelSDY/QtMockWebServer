@@ -24,7 +24,7 @@ public:
     int port() const;
     QString hostName() const;
 
-    QUrl obtainUrl(const QString &path);
+    QUrl getUrl(const QString &path);
 
     void setBodyLimit(int maxBodyLength);
 

@@ -238,7 +238,7 @@ QString QtMockWebServer::hostName() const
     return QHostInfo::localHostName();
 }
 
-QUrl QtMockWebServer::obtainUrl(const QString &path)
+QUrl QtMockWebServer::getUrl(const QString &path)
 {
     QString urlStr = QString("http://%1:%2%3")
             .arg(hostName(), QString::number(port()), path);

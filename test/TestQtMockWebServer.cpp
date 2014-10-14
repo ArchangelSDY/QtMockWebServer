@@ -31,7 +31,7 @@ void TestQtMockWebServer::regularResponse()
     m_mockServer->enqueue(response);
     m_mockServer->play();
 
-    QUrl url = m_mockServer->obtainUrl("/");
+    QUrl url = m_mockServer->getUrl("/");
     QNetworkRequest expReq(url);
     expReq.setRawHeader(QByteArray("Accept-Language"), QByteArray("en-US"));
 
@@ -53,7 +53,7 @@ void TestQtMockWebServer::expect100ContinueWithBody()
     m_mockServer->enqueue(MockResponse());
     m_mockServer->play();
 
-    QUrl url = m_mockServer->obtainUrl("/");
+    QUrl url = m_mockServer->getUrl("/");
     QNetworkRequest expReq(url);
     expReq.setRawHeader(QByteArray("Expect"), QByteArray("100-continue"));
 
@@ -76,7 +76,7 @@ void TestQtMockWebServer::expect100ContinueWithoutBody()
     m_mockServer->enqueue(MockResponse());
     m_mockServer->play();
 
-    QUrl url = m_mockServer->obtainUrl("/");
+    QUrl url = m_mockServer->getUrl("/");
     QNetworkRequest expReq(url);
     expReq.setRawHeader(QByteArray("Expect"), QByteArray("100-continue"));
 
@@ -102,19 +102,19 @@ void TestQtMockWebServer::redirect()
     m_mockServer->enqueue(MockResponse()
             .setStatus("HTTP/1.1 302 Found")
             .addHeader("Location",
-                       m_mockServer->obtainUrl("/new-path").toString())
+                       m_mockServer->getUrl("/new-path").toString())
             .setBody("This page has moved!"));
     m_mockServer->enqueue(MockResponse()
             .setBody("This is the new location!"));
 
-    QNetworkRequest expFirst(m_mockServer->obtainUrl("/"));
+    QNetworkRequest expFirst(m_mockServer->getUrl("/"));
     QNetworkReply *replyFirst = m_mgr.get(expFirst);
     waitForReply(replyFirst);
 
     QCOMPARE(replyFirst->readAll(), QByteArray("This page has moved!"));
     QUrl redirectUrl = replyFirst->attribute(
         QNetworkRequest::RedirectionTargetAttribute).toUrl();
-    QCOMPARE(redirectUrl, m_mockServer->obtainUrl("/new-path"));
+    QCOMPARE(redirectUrl, m_mockServer->getUrl("/new-path"));
     replyFirst->deleteLater();
 
     QNetworkRequest expRedirect = QNetworkRequest(redirectUrl);
