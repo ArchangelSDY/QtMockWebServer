@@ -17,7 +17,7 @@ QT       += network testlib
 
 QT       -= gui
 
-TARGET = RecordedRequestTest
+TARGET = QtMockWebServerTest
 CONFIG   += console
 CONFIG   -= app_bundle
 
