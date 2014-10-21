@@ -2,7 +2,7 @@ QtMockWebServer
 ===============
 
 A mock web server implemented using Qt for testing HTTP clients. This project
-is inspired by the mock web server in project [okhttp](https://github.com/square/okhttp/master/mockwebserver),
+is inspired by the mock web server in project [okhttp](https://github.com/square/okhttp/tree/master/mockwebserver),
 with small changes to API names to make it a bit more Qt style.
 Thanks to their great work!
 
