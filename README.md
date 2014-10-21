@@ -1,4 +1,4 @@
-QtMockWebServer
+QtMockWebServer [![Build Status](https://travis-ci.org/ArchangelSDY/QtMockWebServer.svg?branch=master)](https://travis-ci.org/ArchangelSDY/QtMockWebServer)
 ===============
 
 A mock web server implemented using Qt for testing HTTP clients. This project

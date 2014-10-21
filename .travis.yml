@@ -1,0 +1,13 @@
+language: c++
+
+install:
+    - sudo apt-add-repository ppa:beineri/opt-qt532 -y
+    - sudo apt-get update
+    - sudo apt-get install qt53base
+
+script:
+    source /opt/qt53/bin/qt53-env.sh && cd test && qmake && make -j && ./QtMockWebServerTest
+
+branches:
+    only:
+        - master
