@@ -13,6 +13,8 @@
 // limitations under the License.
 
 
+#include <QStringList>
+
 #include "RecordedRequest.h"
 
 RecordedRequest::RecordedRequest()
@@ -32,10 +34,11 @@ RecordedRequest::RecordedRequest(
     m_sequenceNumber(sequenceNumber)
 {
     if (!requestLine.isNull()) {
-        int methodEnd = requestLine.indexOf(' ');
-        int pathEnd = requestLine.indexOf(' ', methodEnd + 1);
-        m_method = requestLine.mid(0, methodEnd);
-        m_path = requestLine.mid(methodEnd + 1, pathEnd);
+        QStringList parts = requestLine.split(' ');
+        if (parts.count() >= 3) {
+            m_method = parts[0];
+            m_path = parts[1];
+        }
     }
 }
 

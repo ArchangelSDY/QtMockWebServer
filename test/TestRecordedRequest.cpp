@@ -34,6 +34,7 @@ void TestRecordedRequest::accessors()
     RecordedRequest request(requestLine, headers, chunkSizes,
                             body.length(), body, 0);
 
+    QCOMPARE(request.path(), QString("/"));
     QCOMPARE(request.header("cookie"), QString("q=1"));
     QList<QString> cookieHeaders = QList<QString>() << "q=1" << "t=2";
     QCOMPARE(request.headers("cookie"), cookieHeaders);
