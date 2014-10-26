@@ -11,7 +11,7 @@ Thanks to their great work!
 
 ```cpp
 // Create a QtMockWebServer.
-MockWebServer server;
+QtMockWebServer server;
 
 // Schedule some responses.
 server.enqueue(MockResponse().setBody("hello, world!"));
