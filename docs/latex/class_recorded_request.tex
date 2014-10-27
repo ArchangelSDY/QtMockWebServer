@@ -1,0 +1,232 @@
+\hypertarget{class_recorded_request}{\section{Recorded\+Request Class Reference}
+\label{class_recorded_request}\index{Recorded\+Request@{Recorded\+Request}}
+}
+
+
+The recorded request to be validated.  
+
+
+
+
+{\ttfamily \#include $<$Recorded\+Request.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_recorded_request_aca317e0e665c6455c3307ae09d67fbdb}{{\bfseries Recorded\+Request} (const Q\+String \&\hyperlink{class_recorded_request_ab2324bf506aa3e1004d161ea5e5ab97e}{request\+Line}, const Q\+List$<$ Q\+String $>$ \&\hyperlink{class_recorded_request_a3ed5bf33c7903c9078e49eae577d127b}{headers}, const Q\+List$<$ int $>$ \&\hyperlink{class_recorded_request_a5335457575099741e9cc75dc0f266a3d}{chunk\+Sizes}, long \hyperlink{class_recorded_request_ae3092b418550fc6d83fb7add89e54a34}{body\+Size}, const Q\+Byte\+Array \&\hyperlink{class_recorded_request_a29a9250993cbf1c33ad427f08ca936cf}{body}, int \hyperlink{class_recorded_request_af40b9720c9aa0074555dbccc43a37d2a}{sequence\+Number})}\label{class_recorded_request_aca317e0e665c6455c3307ae09d67fbdb}
+
+\item 
+bool \hyperlink{class_recorded_request_ae79ac696d5a57db8102789eb1f0929f4}{is\+Null} () const 
+\begin{DoxyCompactList}\small\item\em Check if empty. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_recorded_request_ab2324bf506aa3e1004d161ea5e5ab97e}{request\+Line} () const 
+\begin{DoxyCompactList}\small\item\em The request line. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_recorded_request_a3d84b8e2b214b74d4c6e1f8e3df098c2}{method} () const 
+\begin{DoxyCompactList}\small\item\em The request method such as \char`\"{}\+G\+E\+T\char`\"{}/\char`\"{}\+P\+O\+S\+T\char`\"{}, etc. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_recorded_request_a77f871f46f16551e2d49e2d8500f8a21}{path} () const 
+\begin{DoxyCompactList}\small\item\em The request path such as \char`\"{}/index.\+html\char`\"{}. \end{DoxyCompactList}\item 
+Q\+List$<$ Q\+String $>$ \hyperlink{class_recorded_request_a3ed5bf33c7903c9078e49eae577d127b}{headers} () const 
+\begin{DoxyCompactList}\small\item\em A list of request headers. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_recorded_request_ac609ec48565b1b46752d777d06ea6134}{header} (const Q\+String \&name) const 
+\begin{DoxyCompactList}\small\item\em Value of given header name. \end{DoxyCompactList}\item 
+Q\+List$<$ Q\+String $>$ \hyperlink{class_recorded_request_a851d5972e3e330ff75b84d514eccb51e}{headers} (const Q\+String \&name) const 
+\begin{DoxyCompactList}\small\item\em A list of values of given header name. Headers such as \char`\"{}\+Cookies\char`\"{} may have multiple ones. \end{DoxyCompactList}\item 
+Q\+List$<$ int $>$ \hyperlink{class_recorded_request_a5335457575099741e9cc75dc0f266a3d}{chunk\+Sizes} () const 
+\begin{DoxyCompactList}\small\item\em Sizes of each body chunk. \end{DoxyCompactList}\item 
+long \hyperlink{class_recorded_request_ae3092b418550fc6d83fb7add89e54a34}{body\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Size of request body. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_recorded_request_a29a9250993cbf1c33ad427f08ca936cf}{body} () const 
+\begin{DoxyCompactList}\small\item\em Content of request body. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_recorded_request_a745e3caa89e0e44f962b47d67c9fafdd}{utf8\+Body} () const 
+\begin{DoxyCompactList}\small\item\em String of request body decoded using \char`\"{}\+U\+T\+F-\/8\char`\"{}. \end{DoxyCompactList}\item 
+int \hyperlink{class_recorded_request_af40b9720c9aa0074555dbccc43a37d2a}{sequence\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Sequence number of this request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The recorded request to be validated. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_recorded_request_a29a9250993cbf1c33ad427f08ca936cf}{\index{Recorded\+Request@{Recorded\+Request}!body@{body}}
+\index{body@{body}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{body}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array Recorded\+Request\+::body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_a29a9250993cbf1c33ad427f08ca936cf}
+
+
+Content of request body. 
+
+\begin{DoxyReturn}{Returns}
+Content of request body. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_ae3092b418550fc6d83fb7add89e54a34}{\index{Recorded\+Request@{Recorded\+Request}!body\+Size@{body\+Size}}
+\index{body\+Size@{body\+Size}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{body\+Size}]{\setlength{\rightskip}{0pt plus 5cm}long Recorded\+Request\+::body\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_ae3092b418550fc6d83fb7add89e54a34}
+
+
+Size of request body. 
+
+\begin{DoxyReturn}{Returns}
+Size of request body. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_a5335457575099741e9cc75dc0f266a3d}{\index{Recorded\+Request@{Recorded\+Request}!chunk\+Sizes@{chunk\+Sizes}}
+\index{chunk\+Sizes@{chunk\+Sizes}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{chunk\+Sizes}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ int $>$ Recorded\+Request\+::chunk\+Sizes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_a5335457575099741e9cc75dc0f266a3d}
+
+
+Sizes of each body chunk. 
+
+\begin{DoxyReturn}{Returns}
+Sizes of each body chunk. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_ac609ec48565b1b46752d777d06ea6134}{\index{Recorded\+Request@{Recorded\+Request}!header@{header}}
+\index{header@{header}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Recorded\+Request\+::header (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_ac609ec48565b1b46752d777d06ea6134}
+
+
+Value of given header name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Header name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of given header name. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_a3ed5bf33c7903c9078e49eae577d127b}{\index{Recorded\+Request@{Recorded\+Request}!headers@{headers}}
+\index{headers@{headers}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{headers}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ Q\+String $>$ Recorded\+Request\+::headers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_a3ed5bf33c7903c9078e49eae577d127b}
+
+
+A list of request headers. 
+
+\begin{DoxyReturn}{Returns}
+A list of request headers. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_a851d5972e3e330ff75b84d514eccb51e}{\index{Recorded\+Request@{Recorded\+Request}!headers@{headers}}
+\index{headers@{headers}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{headers}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ Q\+String $>$ Recorded\+Request\+::headers (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_a851d5972e3e330ff75b84d514eccb51e}
+
+
+A list of values of given header name. Headers such as \char`\"{}\+Cookies\char`\"{} may have multiple ones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Header name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of values. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_ae79ac696d5a57db8102789eb1f0929f4}{\index{Recorded\+Request@{Recorded\+Request}!is\+Null@{is\+Null}}
+\index{is\+Null@{is\+Null}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{is\+Null}]{\setlength{\rightskip}{0pt plus 5cm}bool Recorded\+Request\+::is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_ae79ac696d5a57db8102789eb1f0929f4}
+
+
+Check if empty. 
+
+\begin{DoxyReturn}{Returns}
+True if empty. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_a3d84b8e2b214b74d4c6e1f8e3df098c2}{\index{Recorded\+Request@{Recorded\+Request}!method@{method}}
+\index{method@{method}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{method}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Recorded\+Request\+::method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_a3d84b8e2b214b74d4c6e1f8e3df098c2}
+
+
+The request method such as \char`\"{}\+G\+E\+T\char`\"{}/\char`\"{}\+P\+O\+S\+T\char`\"{}, etc. 
+
+\begin{DoxyReturn}{Returns}
+The request method. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_a77f871f46f16551e2d49e2d8500f8a21}{\index{Recorded\+Request@{Recorded\+Request}!path@{path}}
+\index{path@{path}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Recorded\+Request\+::path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_a77f871f46f16551e2d49e2d8500f8a21}
+
+
+The request path such as \char`\"{}/index.\+html\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+The request path. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_ab2324bf506aa3e1004d161ea5e5ab97e}{\index{Recorded\+Request@{Recorded\+Request}!request\+Line@{request\+Line}}
+\index{request\+Line@{request\+Line}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{request\+Line}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Recorded\+Request\+::request\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_ab2324bf506aa3e1004d161ea5e5ab97e}
+
+
+The request line. 
+
+\begin{DoxyReturn}{Returns}
+The request line. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_af40b9720c9aa0074555dbccc43a37d2a}{\index{Recorded\+Request@{Recorded\+Request}!sequence\+Number@{sequence\+Number}}
+\index{sequence\+Number@{sequence\+Number}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{sequence\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int Recorded\+Request\+::sequence\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_af40b9720c9aa0074555dbccc43a37d2a}
+
+
+Sequence number of this request. 
+
+\begin{DoxyReturn}{Returns}
+Sequence number of this request. 
+\end{DoxyReturn}
+\hypertarget{class_recorded_request_a745e3caa89e0e44f962b47d67c9fafdd}{\index{Recorded\+Request@{Recorded\+Request}!utf8\+Body@{utf8\+Body}}
+\index{utf8\+Body@{utf8\+Body}!Recorded\+Request@{Recorded\+Request}}
+\subsubsection[{utf8\+Body}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Recorded\+Request\+::utf8\+Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_recorded_request_a745e3caa89e0e44f962b47d67c9fafdd}
+
+
+String of request body decoded using \char`\"{}\+U\+T\+F-\/8\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+String of request body decoded using \char`\"{}\+U\+T\+F-\/8\char`\"{}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Recorded\+Request.\+h\item 
+src/Recorded\+Request.\+cpp\end{DoxyCompactItemize}

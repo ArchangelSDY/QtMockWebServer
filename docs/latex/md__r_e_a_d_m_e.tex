@@ -1,0 +1,48 @@
+A mock web server implemented using Qt for testing H\+T\+T\+P clients. This project is inspired by the mock web server in project \href{https://github.com/square/okhttp/tree/master/mockwebserver}{\tt okhttp}, with small changes to A\+P\+I names to make it a bit more Qt style. Thanks to their great work!
+
+\subsubsection*{Example}
+
+```cpp // Create a \hyperlink{class_qt_mock_web_server}{Qt\+Mock\+Web\+Server}. \hyperlink{class_qt_mock_web_server}{Qt\+Mock\+Web\+Server} server;
+
+// Schedule some responses. server.\+enqueue(\hyperlink{class_mock_response}{Mock\+Response()}.set\+Body(\char`\"{}hello, world!\char`\"{})); server.\+enqueue(\hyperlink{class_mock_response}{Mock\+Response()}.set\+Body(\char`\"{}sup, bra?\char`\"{})); server.\+enqueue(\hyperlink{class_mock_response}{Mock\+Response()}.set\+Body(\char`\"{}yo dog\char`\"{}));
+
+// Start the server. server.\+play();
+
+// Ask the server for its U\+R\+L. You'll need this to make H\+T\+T\+P requests. Q\+Url base\+Url = server.\+get\+Url(\char`\"{}/v1/chat/\char`\"{});
+
+// Exercise your application code, which should make those H\+T\+T\+P requests. // Responses are returned in the same order that they are enqueued. Chat chat = new Chat(base\+Url);
+
+chat.\+load\+More(); assert\+Equals(\char`\"{}hello, world!\char`\"{}, chat.\+messages());
+
+chat.\+load\+More(); chat.\+load\+More(); Q\+C\+O\+M\+P\+A\+R\+E(chat.\+messages(), Q\+String(\char`\"{}hello, world!\textbackslash{}nsup, bra?\textbackslash{}nyo dog\char`\"{}));
+
+// Optional\+: confirm that your app made the H\+T\+T\+P requests you were expecting. \hyperlink{class_recorded_request}{Recorded\+Request} request1 = server.\+take\+Request(); Q\+C\+O\+M\+P\+A\+R\+E(request1.\+path(), Q\+String(\char`\"{}/v1/chat/messages/\char`\"{})); Q\+V\+E\+R\+I\+F\+Y2(!request1.header(\char`\"{}\+Authorization\char`\"{}).is\+Empty(), \char`\"{}\+Authorization header is empty.\char`\"{});
+
+\hyperlink{class_recorded_request}{Recorded\+Request} request2 = server.\+take\+Request(); Q\+C\+O\+M\+P\+A\+R\+E(request2.\+path(), Q\+String(\char`\"{}/v1/chat/messages/2\char`\"{}));
+
+\hyperlink{class_recorded_request}{Recorded\+Request} request3 = server.\+take\+Request(); Q\+C\+O\+M\+P\+A\+R\+E(request3.\+path(), Q\+String(\char`\"{}/v1/chat/messages/3\char`\"{}));
+
+// Shut down the server. Instances cannot be reused. server.\+shutdown(); ```
+
+\subsubsection*{T\+O\+D\+O}
+
+
+\begin{DoxyItemize}
+\item H\+T\+T\+P\+S support.
+\item Throttle control.
+\end{DoxyItemize}
+
+\subsubsection*{License}
+
+\begin{DoxyVerb}Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.\end{DoxyVerb}
+ 

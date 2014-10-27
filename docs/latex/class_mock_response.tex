@@ -1,0 +1,271 @@
+\hypertarget{class_mock_response}{\section{Mock\+Response Class Reference}
+\label{class_mock_response}\index{Mock\+Response@{Mock\+Response}}
+}
+
+
+The mock response to be sent to client.  
+
+
+
+
+{\ttfamily \#include $<$Mock\+Response.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_mock_response_a1c7ead952ca453d9b39aa9b8bca1f12c}{\hyperlink{class_mock_response_a1c7ead952ca453d9b39aa9b8bca1f12c}{Mock\+Response} ()}\label{class_mock_response_a1c7ead952ca453d9b39aa9b8bca1f12c}
+
+\begin{DoxyCompactList}\small\item\em An empty success response. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_mock_response_a07333f87aae9d9f0ce12dbc3ee8a6c9f}{status} () const 
+\begin{DoxyCompactList}\small\item\em Status line of response. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_a8a1712c088276f560bc2998c0497cd4e}{set\+Response\+Code} (int code)
+\begin{DoxyCompactList}\small\item\em Set status code of response. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_a668910be8959fe1d79bc568cad40815b}{set\+Status} (const Q\+String \&\hyperlink{class_mock_response_a07333f87aae9d9f0ce12dbc3ee8a6c9f}{status})
+\begin{DoxyCompactList}\small\item\em Set status line of response. \end{DoxyCompactList}\item 
+Q\+List$<$ Q\+String $>$ \hyperlink{class_mock_response_a33118ec3775e5ae003a5b05328576f9e}{headers} () const 
+\begin{DoxyCompactList}\small\item\em A list of response header. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_a1e12972ff518ea9d451803ddc7c2d496}{clear\+Headers} ()
+\begin{DoxyCompactList}\small\item\em Clear all response headers. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_a6f9646406fc3ddb907c0bda152733350}{add\+Header} (const Q\+String \&header)
+\begin{DoxyCompactList}\small\item\em Add a response header. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_aae53cea1158c41083b0ba8326e650092}{add\+Header} (const Q\+String \&key, const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em Add a response header by key/value pairs. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_a6d094afe67ba40115b7b98c6316562e6}{set\+Header} (const Q\+String \&key, const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em Set header value with given name. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_a00eb3c9f357d1686e63f861a1b027525}{remove\+Header} (const Q\+String \&key)
+\begin{DoxyCompactList}\small\item\em Remove header with given name. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_mock_response_a7498743de7e57dbc14835036063a8dec}{body} () const 
+\begin{DoxyCompactList}\small\item\em Body of response. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_a1334f45e12d9fe14900f314aa115d89e}{set\+Body} (const Q\+Byte\+Array \&\hyperlink{class_mock_response_a7498743de7e57dbc14835036063a8dec}{body})
+\begin{DoxyCompactList}\small\item\em Set body of response. \end{DoxyCompactList}\item 
+\hyperlink{class_mock_response}{Mock\+Response} \& \hyperlink{class_mock_response_a92b318654c0154afc3cab04ef35bbb09}{set\+Chunked\+Body} (const Q\+Byte\+Array \&\hyperlink{class_mock_response_a7498743de7e57dbc14835036063a8dec}{body}, int max\+Chunk\+Size)
+\begin{DoxyCompactList}\small\item\em Set chunked body of response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The mock response to be sent to client. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_mock_response_a6f9646406fc3ddb907c0bda152733350}{\index{Mock\+Response@{Mock\+Response}!add\+Header@{add\+Header}}
+\index{add\+Header@{add\+Header}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{add\+Header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::add\+Header (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{header}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_a6f9646406fc3ddb907c0bda152733350}
+
+
+Add a response header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & The header to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_aae53cea1158c41083b0ba8326e650092}{\index{Mock\+Response@{Mock\+Response}!add\+Header@{add\+Header}}
+\index{add\+Header@{add\+Header}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{add\+Header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::add\+Header (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key, }
+\item[{const Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_aae53cea1158c41083b0ba8326e650092}
+
+
+Add a response header by key/value pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Header name. \\
+\hline
+{\em value} & Header value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a7498743de7e57dbc14835036063a8dec}{\index{Mock\+Response@{Mock\+Response}!body@{body}}
+\index{body@{body}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{body}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array Mock\+Response\+::body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_mock_response_a7498743de7e57dbc14835036063a8dec}
+
+
+Body of response. 
+
+\begin{DoxyReturn}{Returns}
+Body of response. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a1e12972ff518ea9d451803ddc7c2d496}{\index{Mock\+Response@{Mock\+Response}!clear\+Headers@{clear\+Headers}}
+\index{clear\+Headers@{clear\+Headers}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{clear\+Headers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::clear\+Headers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_a1e12972ff518ea9d451803ddc7c2d496}
+
+
+Clear all response headers. 
+
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a33118ec3775e5ae003a5b05328576f9e}{\index{Mock\+Response@{Mock\+Response}!headers@{headers}}
+\index{headers@{headers}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{headers}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ Q\+String $>$ Mock\+Response\+::headers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_mock_response_a33118ec3775e5ae003a5b05328576f9e}
+
+
+A list of response header. 
+
+\begin{DoxyReturn}{Returns}
+A list of response of response headers. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a00eb3c9f357d1686e63f861a1b027525}{\index{Mock\+Response@{Mock\+Response}!remove\+Header@{remove\+Header}}
+\index{remove\+Header@{remove\+Header}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{remove\+Header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::remove\+Header (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_a00eb3c9f357d1686e63f861a1b027525}
+
+
+Remove header with given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Header name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a1334f45e12d9fe14900f314aa115d89e}{\index{Mock\+Response@{Mock\+Response}!set\+Body@{set\+Body}}
+\index{set\+Body@{set\+Body}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{set\+Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::set\+Body (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{body}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_a1334f45e12d9fe14900f314aa115d89e}
+
+
+Set body of response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Body of response. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a92b318654c0154afc3cab04ef35bbb09}{\index{Mock\+Response@{Mock\+Response}!set\+Chunked\+Body@{set\+Chunked\+Body}}
+\index{set\+Chunked\+Body@{set\+Chunked\+Body}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{set\+Chunked\+Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::set\+Chunked\+Body (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{body, }
+\item[{int}]{max\+Chunk\+Size}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_a92b318654c0154afc3cab04ef35bbb09}
+
+
+Set chunked body of response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Whole body of response. \\
+\hline
+{\em max\+Chunk\+Size} & Max size limit of each chunk. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a6d094afe67ba40115b7b98c6316562e6}{\index{Mock\+Response@{Mock\+Response}!set\+Header@{set\+Header}}
+\index{set\+Header@{set\+Header}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{set\+Header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::set\+Header (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{key, }
+\item[{const Q\+String \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_a6d094afe67ba40115b7b98c6316562e6}
+
+
+Set header value with given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Header name. \\
+\hline
+{\em value} & Header value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a8a1712c088276f560bc2998c0497cd4e}{\index{Mock\+Response@{Mock\+Response}!set\+Response\+Code@{set\+Response\+Code}}
+\index{set\+Response\+Code@{set\+Response\+Code}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{set\+Response\+Code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::set\+Response\+Code (
+\begin{DoxyParamCaption}
+\item[{int}]{code}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_a8a1712c088276f560bc2998c0497cd4e}
+
+
+Set status code of response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Status code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a668910be8959fe1d79bc568cad40815b}{\index{Mock\+Response@{Mock\+Response}!set\+Status@{set\+Status}}
+\index{set\+Status@{set\+Status}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{set\+Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} \& Mock\+Response\+::set\+Status (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{status}
+\end{DoxyParamCaption}
+)}}\label{class_mock_response_a668910be8959fe1d79bc568cad40815b}
+
+
+Set status line of response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Status line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of this object. 
+\end{DoxyReturn}
+\hypertarget{class_mock_response_a07333f87aae9d9f0ce12dbc3ee8a6c9f}{\index{Mock\+Response@{Mock\+Response}!status@{status}}
+\index{status@{status}!Mock\+Response@{Mock\+Response}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Mock\+Response\+::status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_mock_response_a07333f87aae9d9f0ce12dbc3ee8a6c9f}
+
+
+Status line of response. 
+
+\begin{DoxyReturn}{Returns}
+Status line of response such as \char`\"{}\+H\+T\+T\+P/1.\+1 200 O\+K\char`\"{}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Mock\+Response.\+h\item 
+src/Mock\+Response.\+cpp\end{DoxyCompactItemize}

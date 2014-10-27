@@ -1,0 +1,142 @@
+\hypertarget{class_queue_dispatcher}{\section{Queue\+Dispatcher Class Reference}
+\label{class_queue_dispatcher}\index{Queue\+Dispatcher@{Queue\+Dispatcher}}
+}
+
+
+A dispatcher using queue policy.  
+
+
+
+
+{\ttfamily \#include $<$Queue\+Dispatcher.\+h$>$}
+
+Inheritance diagram for Queue\+Dispatcher\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_queue_dispatcher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_mock_response}{Mock\+Response} \hyperlink{class_queue_dispatcher_ae5fe9ec67b24b75ece3f28d908e2764e}{dispatch} (const \hyperlink{class_recorded_request}{Recorded\+Request} \&request)
+\begin{DoxyCompactList}\small\item\em Serve incoming request with next response in queue. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_mock_response}{Mock\+Response} \hyperlink{class_queue_dispatcher_acea23f016b5fd62ec7cc94ee1db1816e}{peek} ()
+\begin{DoxyCompactList}\small\item\em Head response in queue if queue is not empty. Otherwise the fail-\/fast response is returned if set. If both are empty, \hyperlink{class_dispatcher_af4768d8abe65389a5cdbb48499c32a0f}{Dispatcher\+::peek()} is returned. \end{DoxyCompactList}\item 
+void \hyperlink{class_queue_dispatcher_a5ce0e46fe53d760fe98da7ec010dc0ef}{enqueue\+Response} (const \hyperlink{class_mock_response}{Mock\+Response} \&response)
+\begin{DoxyCompactList}\small\item\em Enqueue given response. \end{DoxyCompactList}\item 
+void \hyperlink{class_queue_dispatcher_a2f09193b180fb46fe7b0822022b52222}{set\+Fail\+Fast} (bool fail\+Fast)
+\begin{DoxyCompactList}\small\item\em Set if we should dispatch a immediate fail response when the queue is empty. \end{DoxyCompactList}\item 
+void \hyperlink{class_queue_dispatcher_ab7a07e38d21032f2657896c647cb6f2f}{set\+Fail\+Fast} (\hyperlink{class_mock_response}{Mock\+Response} $\ast$fail\+Fast\+Response)
+\begin{DoxyCompactList}\small\item\em Set the fail-\/fast response which will be used when the queue is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_queue_dispatcher_aa844b856cedb4439abaf022118a7dc50}{Q\+Queue$<$ \hyperlink{class_mock_response}{Mock\+Response} $>$ {\bfseries m\+\_\+response\+Queue}}\label{class_queue_dispatcher_aa844b856cedb4439abaf022118a7dc50}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A dispatcher using queue policy. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_queue_dispatcher_ae5fe9ec67b24b75ece3f28d908e2764e}{\index{Queue\+Dispatcher@{Queue\+Dispatcher}!dispatch@{dispatch}}
+\index{dispatch@{dispatch}!Queue\+Dispatcher@{Queue\+Dispatcher}}
+\subsubsection[{dispatch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} Queue\+Dispatcher\+::dispatch (
+\begin{DoxyParamCaption}
+\item[{const {\bf Recorded\+Request} \&}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_queue_dispatcher_ae5fe9ec67b24b75ece3f28d908e2764e}
+
+
+Serve incoming request with next response in queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The incoming request. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next response in queue. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_dispatcher_acbbf8d0ca649be337d805dcbaf4ba81b}{Dispatcher}.
+
+\hypertarget{class_queue_dispatcher_a5ce0e46fe53d760fe98da7ec010dc0ef}{\index{Queue\+Dispatcher@{Queue\+Dispatcher}!enqueue\+Response@{enqueue\+Response}}
+\index{enqueue\+Response@{enqueue\+Response}!Queue\+Dispatcher@{Queue\+Dispatcher}}
+\subsubsection[{enqueue\+Response}]{\setlength{\rightskip}{0pt plus 5cm}void Queue\+Dispatcher\+::enqueue\+Response (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mock\+Response} \&}]{response}
+\end{DoxyParamCaption}
+)}}\label{class_queue_dispatcher_a5ce0e46fe53d760fe98da7ec010dc0ef}
+
+
+Enqueue given response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & A mock response. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_queue_dispatcher_acea23f016b5fd62ec7cc94ee1db1816e}{\index{Queue\+Dispatcher@{Queue\+Dispatcher}!peek@{peek}}
+\index{peek@{peek}!Queue\+Dispatcher@{Queue\+Dispatcher}}
+\subsubsection[{peek}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mock\+Response} Queue\+Dispatcher\+::peek (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_queue_dispatcher_acea23f016b5fd62ec7cc94ee1db1816e}
+
+
+Head response in queue if queue is not empty. Otherwise the fail-\/fast response is returned if set. If both are empty, \hyperlink{class_dispatcher_af4768d8abe65389a5cdbb48499c32a0f}{Dispatcher\+::peek()} is returned. 
+
+\begin{DoxyReturn}{Returns}
+Guess of next resposne. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_dispatcher_af4768d8abe65389a5cdbb48499c32a0f}{Dispatcher}.
+
+\hypertarget{class_queue_dispatcher_a2f09193b180fb46fe7b0822022b52222}{\index{Queue\+Dispatcher@{Queue\+Dispatcher}!set\+Fail\+Fast@{set\+Fail\+Fast}}
+\index{set\+Fail\+Fast@{set\+Fail\+Fast}!Queue\+Dispatcher@{Queue\+Dispatcher}}
+\subsubsection[{set\+Fail\+Fast}]{\setlength{\rightskip}{0pt plus 5cm}void Queue\+Dispatcher\+::set\+Fail\+Fast (
+\begin{DoxyParamCaption}
+\item[{bool}]{fail\+Fast}
+\end{DoxyParamCaption}
+)}}\label{class_queue_dispatcher_a2f09193b180fb46fe7b0822022b52222}
+
+
+Set if we should dispatch a immediate fail response when the queue is empty. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]It will be useful after queue is implemented blockable. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em fail\+Fast} & True if should fail fast. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_queue_dispatcher_ab7a07e38d21032f2657896c647cb6f2f}{\index{Queue\+Dispatcher@{Queue\+Dispatcher}!set\+Fail\+Fast@{set\+Fail\+Fast}}
+\index{set\+Fail\+Fast@{set\+Fail\+Fast}!Queue\+Dispatcher@{Queue\+Dispatcher}}
+\subsubsection[{set\+Fail\+Fast}]{\setlength{\rightskip}{0pt plus 5cm}void Queue\+Dispatcher\+::set\+Fail\+Fast (
+\begin{DoxyParamCaption}
+\item[{{\bf Mock\+Response} $\ast$}]{fail\+Fast\+Response}
+\end{DoxyParamCaption}
+)}}\label{class_queue_dispatcher_ab7a07e38d21032f2657896c647cb6f2f}
+
+
+Set the fail-\/fast response which will be used when the queue is empty. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]It will be useful after queue is implemented blockable. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em fail\+Fast\+Response} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Queue\+Dispatcher.\+h\item 
+src/Queue\+Dispatcher.\+cpp\end{DoxyCompactItemize}

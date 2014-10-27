@@ -1,0 +1,198 @@
+\hypertarget{class_qt_mock_web_server}{\section{Qt\+Mock\+Web\+Server Class Reference}
+\label{class_qt_mock_web_server}\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+}
+
+
+A mock web server serving requests using pre-\/queued mock responses by default.  
+
+
+
+
+{\ttfamily \#include $<$Qt\+Mock\+Web\+Server.\+h$>$}
+
+Inheritance diagram for Qt\+Mock\+Web\+Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_qt_mock_web_server}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_qt_mock_web_server_a83034aa1dbf8114d6b1bc01dd97cd2f3}{port} () const 
+\begin{DoxyCompactList}\small\item\em Port of the mock server listening. Note that it's only avaliable after server started by \hyperlink{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}{play()}. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_qt_mock_web_server_a4779ef849c0bda6a605f453c8752491d}{host\+Name} () const 
+\begin{DoxyCompactList}\small\item\em host name of the mock server listening. Note that it's only available after server started by \hyperlink{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}{play()}. \end{DoxyCompactList}\item 
+Q\+Url \hyperlink{class_qt_mock_web_server_ace67dccbdce71316237a03e9830d8170}{get\+Url} (const Q\+String \&path)
+\begin{DoxyCompactList}\small\item\em Get absolute url of given path. Note that it's only available after server started by \hyperlink{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}{play()}. \end{DoxyCompactList}\item 
+void \hyperlink{class_qt_mock_web_server_a9b3f8f6054887c147b2c3fb36fbce271}{set\+Body\+Limit} (int max\+Body\+Length)
+\begin{DoxyCompactList}\small\item\em Set max length limit of response body. \end{DoxyCompactList}\item 
+\hyperlink{class_recorded_request}{Recorded\+Request} \hyperlink{class_qt_mock_web_server_aa1483ddd073de09247c53c0aa3a7b05b}{take\+Request} ()
+\begin{DoxyCompactList}\small\item\em Take next recorded request the server received. \end{DoxyCompactList}\item 
+int \hyperlink{class_qt_mock_web_server_a3d0745d34a224fcf31042d5b5438bbc6}{request\+Count} () const 
+\begin{DoxyCompactList}\small\item\em Count of requests the server received. \end{DoxyCompactList}\item 
+void \hyperlink{class_qt_mock_web_server_abb8bebe8b9db1d772ea84b244e64f138}{enqueue} (const \hyperlink{class_mock_response}{Mock\+Response} \&response)
+\begin{DoxyCompactList}\small\item\em Enqueue a mock response to be served. \end{DoxyCompactList}\item 
+\hypertarget{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}{void \hyperlink{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}{play} ()}\label{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}
+
+\begin{DoxyCompactList}\small\item\em Start the server. \end{DoxyCompactList}\item 
+void \hyperlink{class_qt_mock_web_server_a879a7db2d5b375323bdb464a6031084d}{play} (int \hyperlink{class_qt_mock_web_server_a83034aa1dbf8114d6b1bc01dd97cd2f3}{port})
+\begin{DoxyCompactList}\small\item\em Try to start the server on given port. \end{DoxyCompactList}\item 
+\hypertarget{class_qt_mock_web_server_a65f0a8d5b67723a4631fcf2741c787ff}{void \hyperlink{class_qt_mock_web_server_a65f0a8d5b67723a4631fcf2741c787ff}{shutdown} ()}\label{class_qt_mock_web_server_a65f0a8d5b67723a4631fcf2741c787ff}
+
+\begin{DoxyCompactList}\small\item\em Shut down the server. \end{DoxyCompactList}\item 
+void \hyperlink{class_qt_mock_web_server_af035f3eee01d9b857923d917f6b57098}{set\+Dispatcher} (\hyperlink{class_dispatcher}{Dispatcher} $\ast$dispatcher)
+\begin{DoxyCompactList}\small\item\em Set a custom dispatcher which decides how to serve requests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A mock web server serving requests using pre-\/queued mock responses by default. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_qt_mock_web_server_abb8bebe8b9db1d772ea84b244e64f138}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{enqueue}]{\setlength{\rightskip}{0pt plus 5cm}void Qt\+Mock\+Web\+Server\+::enqueue (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mock\+Response} \&}]{response}
+\end{DoxyParamCaption}
+)}}\label{class_qt_mock_web_server_abb8bebe8b9db1d772ea84b244e64f138}
+
+
+Enqueue a mock response to be served. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & The mock response. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_qt_mock_web_server_ace67dccbdce71316237a03e9830d8170}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!get\+Url@{get\+Url}}
+\index{get\+Url@{get\+Url}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{get\+Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Url Qt\+Mock\+Web\+Server\+::get\+Url (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{path}
+\end{DoxyParamCaption}
+)}}\label{class_qt_mock_web_server_ace67dccbdce71316237a03e9830d8170}
+
+
+Get absolute url of given path. Note that it's only available after server started by \hyperlink{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}{play()}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Requested path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Absolute url of given path. 
+\end{DoxyReturn}
+\hypertarget{class_qt_mock_web_server_a4779ef849c0bda6a605f453c8752491d}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!host\+Name@{host\+Name}}
+\index{host\+Name@{host\+Name}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{host\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Qt\+Mock\+Web\+Server\+::host\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_qt_mock_web_server_a4779ef849c0bda6a605f453c8752491d}
+
+
+host name of the mock server listening. Note that it's only available after server started by \hyperlink{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}{play()}. 
+
+\begin{DoxyReturn}{Returns}
+Server host name. 
+\end{DoxyReturn}
+\hypertarget{class_qt_mock_web_server_a879a7db2d5b375323bdb464a6031084d}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!play@{play}}
+\index{play@{play}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}void Qt\+Mock\+Web\+Server\+::play (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{class_qt_mock_web_server_a879a7db2d5b375323bdb464a6031084d}
+
+
+Try to start the server on given port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Start the server on this port. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_qt_mock_web_server_a83034aa1dbf8114d6b1bc01dd97cd2f3}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!port@{port}}
+\index{port@{port}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{port}]{\setlength{\rightskip}{0pt plus 5cm}int Qt\+Mock\+Web\+Server\+::port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_qt_mock_web_server_a83034aa1dbf8114d6b1bc01dd97cd2f3}
+
+
+Port of the mock server listening. Note that it's only avaliable after server started by \hyperlink{class_qt_mock_web_server_a5bad6c701969176fefd90d47417981c5}{play()}. 
+
+\begin{DoxyReturn}{Returns}
+Server port number 
+\end{DoxyReturn}
+\hypertarget{class_qt_mock_web_server_a3d0745d34a224fcf31042d5b5438bbc6}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!request\+Count@{request\+Count}}
+\index{request\+Count@{request\+Count}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{request\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Qt\+Mock\+Web\+Server\+::request\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_qt_mock_web_server_a3d0745d34a224fcf31042d5b5438bbc6}
+
+
+Count of requests the server received. 
+
+\begin{DoxyReturn}{Returns}
+Count of requests. 
+\end{DoxyReturn}
+\hypertarget{class_qt_mock_web_server_a9b3f8f6054887c147b2c3fb36fbce271}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!set\+Body\+Limit@{set\+Body\+Limit}}
+\index{set\+Body\+Limit@{set\+Body\+Limit}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{set\+Body\+Limit}]{\setlength{\rightskip}{0pt plus 5cm}void Qt\+Mock\+Web\+Server\+::set\+Body\+Limit (
+\begin{DoxyParamCaption}
+\item[{int}]{max\+Body\+Length}
+\end{DoxyParamCaption}
+)}}\label{class_qt_mock_web_server_a9b3f8f6054887c147b2c3fb36fbce271}
+
+
+Set max length limit of response body. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Not fully implemented. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Body\+Length} & Max body length limit. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_qt_mock_web_server_af035f3eee01d9b857923d917f6b57098}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!set\+Dispatcher@{set\+Dispatcher}}
+\index{set\+Dispatcher@{set\+Dispatcher}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{set\+Dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}void Qt\+Mock\+Web\+Server\+::set\+Dispatcher (
+\begin{DoxyParamCaption}
+\item[{{\bf Dispatcher} $\ast$}]{dispatcher}
+\end{DoxyParamCaption}
+)}}\label{class_qt_mock_web_server_af035f3eee01d9b857923d917f6b57098}
+
+
+Set a custom dispatcher which decides how to serve requests. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dispatcher} & The custome dispatcher. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_qt_mock_web_server_aa1483ddd073de09247c53c0aa3a7b05b}{\index{Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}!take\+Request@{take\+Request}}
+\index{take\+Request@{take\+Request}!Qt\+Mock\+Web\+Server@{Qt\+Mock\+Web\+Server}}
+\subsubsection[{take\+Request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Recorded\+Request} Qt\+Mock\+Web\+Server\+::take\+Request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_qt_mock_web_server_aa1483ddd073de09247c53c0aa3a7b05b}
+
+
+Take next recorded request the server received. 
+
+\begin{DoxyReturn}{Returns}
+Next recorded request. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Qt\+Mock\+Web\+Server.\+h\item 
+src/Qt\+Mock\+Web\+Server.\+cpp\end{DoxyCompactItemize}
