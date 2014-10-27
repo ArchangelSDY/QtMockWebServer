@@ -21,24 +21,89 @@
 
 class QBuffer;
 
+/**
+ * @brief The mock response to be sent to client.
+ */
 class MockResponse
 {
 public:
+    /**
+     * @brief An empty success response.
+     */
     MockResponse();
 
+    /**
+     * @brief Status line of response
+     * @return Status line of response such as "HTTP/1.1 200 OK".
+     */
     QString status() const;
+    /**
+     * @brief Set status code of response.
+     * @param code Status code.
+     * @return Reference of this object.
+     */
     MockResponse &setResponseCode(int code);
+    /**
+     * @brief Set status line of response.
+     * @param status Status line.
+     * @return Reference of this object.
+     */
     MockResponse &setStatus(const QString &status);
 
+    /**
+     * @brief A list of response header.
+     * @return A list of response of response headers.
+     */
     QList<QString> headers() const;
+    /**
+     * @brief Clear all response headers.
+     * @return Reference of this object.
+     */
     MockResponse &clearHeaders();
+    /**
+     * @brief Add a response header.
+     * @param header The header to be added.
+     * @return Reference of this object.
+     */
     MockResponse &addHeader(const QString &header);
+    /**
+     * @brief Add a response header by key/value pairs.
+     * @param key Header name.
+     * @param value Header value.
+     * @return Reference of this object.
+     */
     MockResponse &addHeader(const QString &key, const QString &value);
+    /**
+     * @brief Set header value with given name.
+     * @param key Header name.
+     * @param value Header value.
+     * @return Reference of this object.
+     */
     MockResponse &setHeader(const QString &key, const QString &value);
+    /**
+     * @brief Remove header with given name.
+     * @param key Header name.
+     * @return Reference of this object.
+     */
     MockResponse &removeHeader(const QString &key);
 
+    /**
+     * @brief Body of response.
+     * @return Body of response.
+     */
     QByteArray body() const;
+    /**
+     * @brief Set body of response.
+     * @param body Body of response.
+     * @return Reference of this object.
+     */
     MockResponse &setBody(const QByteArray &body);
+    /**
+     * @brief Set chunked body of response.
+     * @param body Whole body of response.
+     * @param maxChunkSize Max size limit of each chunk.
+     * @return Reference of this object.
+     */
     MockResponse &setChunkedBody(const QByteArray &body, int maxChunkSize);
 
 private:

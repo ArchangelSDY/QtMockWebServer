@@ -19,12 +19,28 @@
 class MockResponse;
 class RecordedRequest;
 
+/**
+ * @brief Abstract parent of dispatchers.
+ *
+ * A dispatcher decides what MockResponse should be dispatched giving
+ * a RecordedRequest.
+ */
 class Dispatcher
 {
 public:
     virtual ~Dispatcher() {}
 
+    /**
+     * @brief Dispatch a request.
+     * @param request The incoming request.
+     * @return The MockResponse to be sent to client.
+     */
     virtual MockResponse dispatch(const RecordedRequest &request) = 0;
+    /**
+     * @brief An early guess of the next response, used for policy on how an
+     *        incoming requests should be received.
+     * @return An early guess of the next response.
+     */
     virtual MockResponse peek();
 };
 

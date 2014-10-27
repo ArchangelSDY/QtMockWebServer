@@ -9,46 +9,46 @@ Thanks to their great work!
 
 ### Example
 
-```cpp
-// Create a QtMockWebServer.
-QtMockWebServer server;
+    ```cpp
+    // Create a QtMockWebServer.
+    QtMockWebServer server;
 
-// Schedule some responses.
-server.enqueue(MockResponse().setBody("hello, world!"));
-server.enqueue(MockResponse().setBody("sup, bra?"));
-server.enqueue(MockResponse().setBody("yo dog"));
+    // Schedule some responses.
+    server.enqueue(MockResponse().setBody("hello, world!"));
+    server.enqueue(MockResponse().setBody("sup, bra?"));
+    server.enqueue(MockResponse().setBody("yo dog"));
 
-// Start the server.
-server.play();
+    // Start the server.
+    server.play();
 
-// Ask the server for its URL. You'll need this to make HTTP requests.
-QUrl baseUrl = server.getUrl("/v1/chat/");
+    // Ask the server for its URL. You'll need this to make HTTP requests.
+    QUrl baseUrl = server.getUrl("/v1/chat/");
 
-// Exercise your application code, which should make those HTTP requests.
-// Responses are returned in the same order that they are enqueued.
-Chat chat = new Chat(baseUrl);
+    // Exercise your application code, which should make those HTTP requests.
+    // Responses are returned in the same order that they are enqueued.
+    Chat chat = new Chat(baseUrl);
 
-chat.loadMore();
-assertEquals("hello, world!", chat.messages());
+    chat.loadMore();
+    assertEquals("hello, world!", chat.messages());
 
-chat.loadMore();
-chat.loadMore();
-QCOMPARE(chat.messages(), QString("hello, world!\nsup, bra?\nyo dog"));
+    chat.loadMore();
+    chat.loadMore();
+    QCOMPARE(chat.messages(), QString("hello, world!\nsup, bra?\nyo dog"));
 
-// Optional: confirm that your app made the HTTP requests you were expecting.
-RecordedRequest request1 = server.takeRequest();
-QCOMPARE(request1.path(), QString("/v1/chat/messages/"));
-QVERIFY2(!request1.header("Authorization").isEmpty(), "Authorization header is empty.");
+    // Optional: confirm that your app made the HTTP requests you were expecting.
+    RecordedRequest request1 = server.takeRequest();
+    QCOMPARE(request1.path(), QString("/v1/chat/messages/"));
+    QVERIFY2(!request1.header("Authorization").isEmpty(), "Authorization header is empty.");
 
-RecordedRequest request2 = server.takeRequest();
-QCOMPARE(request2.path(), QString("/v1/chat/messages/2"));
+    RecordedRequest request2 = server.takeRequest();
+    QCOMPARE(request2.path(), QString("/v1/chat/messages/2"));
 
-RecordedRequest request3 = server.takeRequest();
-QCOMPARE(request3.path(), QString("/v1/chat/messages/3"));
+    RecordedRequest request3 = server.takeRequest();
+    QCOMPARE(request3.path(), QString("/v1/chat/messages/3"));
 
-// Shut down the server. Instances cannot be reused.
-server.shutdown();
-```
+    // Shut down the server. Instances cannot be reused.
+    server.shutdown();
+    ```
 
 
 ### TODO

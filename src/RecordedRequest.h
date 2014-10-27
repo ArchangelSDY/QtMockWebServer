@@ -19,6 +19,9 @@
 #include <QList>
 #include <QString>
 
+/**
+ * @brief The recorded request to be validated.
+ */
 class RecordedRequest
 {
 public:
@@ -28,17 +31,68 @@ public:
                     const QByteArray &body, int sequenceNumber //, Socket
                     );
 
+    /**
+     * @brief Check if empty.
+     * @return True if empty.
+     */
     bool isNull() const;
+    /**
+     * @brief The request line.
+     * @return The request line.
+     */
     QString requestLine() const;
+    /**
+     * @brief The request method such as "GET"/"POST", etc.
+     * @return The request method.
+     */
     QString method() const;
+    /**
+     * @brief The request path such as "/index.html".
+     * @return The request path.
+     */
     QString path() const;
+    /**
+     * @brief A list of request headers.
+     * @return A list of request headers.
+     */
     QList<QString> headers() const;
+    /**
+     * @brief Value of given header name.
+     * @param name Header name.
+     * @return Value of given header name.
+     */
     QString header(const QString &name) const;
+    /**
+     * @brief A list of values of given header name. Headers such as "Cookies"
+     *        may have multiple ones.
+     * @param name Header name.
+     * @return A list of values.
+     */
     QList<QString> headers(const QString &name) const;
+    /**
+     * @brief Sizes of each body chunk.
+     * @return Sizes of each body chunk.
+     */
     QList<int> chunkSizes() const;
+    /**
+     * @brief Size of request body.
+     * @return Size of request body.
+     */
     long bodySize() const;
+    /**
+     * @brief Content of request body.
+     * @return Content of request body.
+     */
     QByteArray body() const;
+    /**
+     * @brief String of request body decoded using "UTF-8".
+     * @return String of request body decoded using "UTF-8".
+     */
     QString utf8Body() const;
+    /**
+     * @brief Sequence number of this request.
+     * @return Sequence number of this request.
+     */
     int sequenceNumber() const;
 
 private:

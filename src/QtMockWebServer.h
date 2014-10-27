@@ -27,6 +27,10 @@ class MockResponse;
 class ThreadTcpServer;
 class RecordedRequest;
 
+/**
+ * @brief A mock web server serving requests using pre-queued mock responses
+ *        by default.
+ */
 class QtMockWebServer : public QObject
 {
     Q_OBJECT
@@ -36,22 +40,69 @@ public:
     QtMockWebServer();
     ~QtMockWebServer();
 
+    /**
+     * @brief Port of the mock server listening. Note that it's only avaliable
+     *        after server started by play().
+     * @return Server port number
+     */
     int port() const;
+    /**
+     * @brief host name of the mock server listening. Note that it's only
+     *        available after server started by play().
+     * @return Server host name.
+     */
     QString hostName() const;
 
+    /**
+     * @brief Get absolute url of given path. Note that it's only available
+     *        after server started by play().
+     * @param path Requested path.
+     * @return Absolute url of given path.
+     */
     QUrl getUrl(const QString &path);
 
+    /**
+     * \todo Not fully implemented.
+     * @brief Set max length limit of response body.
+     * @param maxBodyLength Max body length limit.
+     */
     void setBodyLimit(int maxBodyLength);
 
+    /**
+     * @brief Take next recorded request the server received.
+     * @return Next recorded request.
+     */
     RecordedRequest takeRequest();
+    /**
+     * @brief Count of requests the server received.
+     * @return Count of requests.
+     */
     int requestCount() const;
 
+    /**
+     * @brief Enqueue a mock response to be served.
+     * @param response The mock response.
+     */
     void enqueue(const MockResponse &response);
 
+    /**
+     * @brief Start the server.
+     */
     void play();
+    /**
+     * @brief Try to start the server on given port.
+     * @param port Start the server on this port.
+     */
     void play(int port);
+    /**
+     * @brief Shut down the server.
+     */
     void shutdown();
 
+    /**
+     * @brief Set a custom dispatcher which decides how to serve requests.
+     * @param dispatcher The custome dispatcher.
+     */
     void setDispatcher(Dispatcher *dispatcher);
 
 private:
