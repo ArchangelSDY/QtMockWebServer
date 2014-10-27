@@ -2,8 +2,7 @@ A mock web server implemented using Qt for testing H\+T\+T\+P clients. This proj
 
 \subsubsection*{Example}
 
-\begin{DoxyVerb}```cpp
-// Create a QtMockWebServer.
+\begin{DoxyVerb}// Create a QtMockWebServer.
 QtMockWebServer server;
 
 // Schedule some responses.
@@ -41,9 +40,12 @@ QCOMPARE(request3.path(), QString("/v1/chat/messages/3"));
 
 // Shut down the server. Instances cannot be reused.
 server.shutdown();
-```
 \end{DoxyVerb}
 
+
+\subsubsection*{A\+P\+I}
+
+\href{http://archangelsdy.github.io/QtMockWebServer/docs/html/index.html}{\tt Go to doxygen docs.}
 
 \subsubsection*{T\+O\+D\+O}
 

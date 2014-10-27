@@ -81,8 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>A mock web server implemented using Qt for testing HTTP clients. This project is inspired by the mock web server in project <a href="https://github.com/square/okhttp/tree/master/mockwebserver">okhttp</a>, with small changes to API names to make it a bit more Qt style. Thanks to their great work!</p>
 <h3>Example</h3>
-<pre class="fragment">```cpp
-// Create a QtMockWebServer.
+<pre class="fragment">// Create a QtMockWebServer.
 QtMockWebServer server;
 
 // Schedule some responses.
@@ -120,8 +119,9 @@ QCOMPARE(request3.path(), QString("/v1/chat/messages/3"));
 
 // Shut down the server. Instances cannot be reused.
 server.shutdown();
-```
-</pre><h3>TODO</h3>
+</pre><h3>API</h3>
+<p><a href="http://archangelsdy.github.io/QtMockWebServer/docs/html/index.html">Go to doxygen docs.</a></p>
+<h3>TODO</h3>
 <ul>
 <li>HTTPS support.</li>
 <li>Throttle control.</li>
@@ -140,7 +140,7 @@ See the License for the specific language governing permissions and
 limitations under the License.</pre> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 27 2014 22:32:42 for QtMockWebServer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 27 2014 22:44:26 for QtMockWebServer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>
