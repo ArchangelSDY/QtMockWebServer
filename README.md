@@ -9,7 +9,6 @@ Thanks to their great work!
 
 ### Example
 
-    ```cpp
     // Create a QtMockWebServer.
     QtMockWebServer server;
 
@@ -48,7 +47,11 @@ Thanks to their great work!
 
     // Shut down the server. Instances cannot be reused.
     server.shutdown();
-    ```
+
+
+### API
+
+[Go to doxygen docs.](http://archangelsdy.github.io/QtMockWebServer/docs/html/index.html)
 
 
 ### TODO
@@ -70,4 +73,3 @@ Thanks to their great work!
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
