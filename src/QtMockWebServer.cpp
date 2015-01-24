@@ -45,6 +45,7 @@ public:
         int sequenceNumber = 0;
 
         while (!processOneRequest(socket, sequenceNumber)) {
+            socket->waitForReadyRead();
         }
 
         if (sequenceNumber == 0) {
