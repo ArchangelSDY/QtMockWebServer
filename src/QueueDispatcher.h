@@ -16,6 +16,7 @@
 #ifndef QUEUEDISPATCHER_H
 #define QUEUEDISPATCHER_H
 
+#include <QMutex>
 #include <QQueue>
 
 #include "Dispatcher.h"
@@ -67,6 +68,7 @@ public:
 
 protected:
     QQueue<MockResponse> m_responseQueue;
+    QMutex m_queueMutex;
 
 private:
     MockResponse *m_failFastResponse;

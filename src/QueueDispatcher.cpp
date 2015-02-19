@@ -13,6 +13,7 @@
 // limitations under the License.
 
 
+#include <QMutexLocker>
 #include <QDebug>
 
 #include "MockResponse.h"
@@ -39,8 +40,14 @@ MockResponse QueueDispatcher::dispatch(const RecordedRequest &request)
         return MockResponse().setResponseCode(404);
     }
 
-    if (m_failFastResponse && m_responseQueue.isEmpty()) {
-        return *m_failFastResponse;
+    QMutexLocker locker(&m_queueMutex);
+
+    if (m_responseQueue.isEmpty()) {
+        if (m_failFastResponse) {
+            return *m_failFastResponse;
+        } else {
+            return Dispatcher::peek();
+        }
     }
 
     return m_responseQueue.dequeue();
@@ -48,6 +55,7 @@ MockResponse QueueDispatcher::dispatch(const RecordedRequest &request)
 
 MockResponse QueueDispatcher::peek()
 {
+    QMutexLocker locker(&m_queueMutex);
     if (!m_responseQueue.isEmpty()) {
         return m_responseQueue.head();
     }
@@ -59,6 +67,7 @@ MockResponse QueueDispatcher::peek()
 
 void QueueDispatcher::enqueueResponse(const MockResponse &response)
 {
+    QMutexLocker locker(&m_queueMutex);
     m_responseQueue.enqueue(response);
 }
 
