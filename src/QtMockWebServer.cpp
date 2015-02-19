@@ -289,8 +289,11 @@ void QtMockWebServer::play()
 
 void QtMockWebServer::play(int port)
 {
-    m_server->listen(QHostAddress::Any, port);
-    m_port = m_server->serverPort();
+    if (m_server->listen(QHostAddress::Any, port)) {
+        m_port = m_server->serverPort();
+    } else {
+        qWarning() << m_server->errorString();
+    }
 }
 
 void QtMockWebServer::shutdown()
