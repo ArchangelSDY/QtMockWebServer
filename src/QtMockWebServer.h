@@ -16,6 +16,7 @@
 #ifndef QTMOCKWEBSERVER_H
 #define QTMOCKWEBSERVER_H
 
+#include <QMutex>
 #include <QObject>
 #include <QQueue>
 
@@ -106,13 +107,10 @@ public:
     void setDispatcher(Dispatcher *dispatcher);
 
 private:
-    bool processOneRequest(QTcpSocket *socket, int &sequenceNumber);
-    RecordedRequest readRequest(QTcpSocket *socket, int &sequenceNumber);
-    QString readAsciiUntilCrlf(QTcpSocket *socket);
-    void readEmptyLine(QTcpSocket *socket);
-    void writeResponse(QTcpSocket *socket, const MockResponse &response);
+    void enqueueRequest(const RecordedRequest &request);
 
     QQueue<RecordedRequest> m_requestQueue;
+    QMutex m_mutex;
     QAtomicInt m_requestCount;
     int m_port;
     int m_bodyLimit;

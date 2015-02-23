@@ -66,8 +66,7 @@ public:
             return false;
         }
 
-        m_server->m_requestQueue.enqueue(request);
-        m_server->m_requestCount++;
+        m_server->enqueueRequest(request);
         MockResponse response = m_server->m_dispatcher->dispatch(request);
 
         writeResponse(socket, response);
@@ -240,6 +239,7 @@ QtMockWebServer::QtMockWebServer() :
 
 QtMockWebServer::~QtMockWebServer()
 {
+    QThreadPool::globalInstance()->waitForDone();
     delete m_dispatcher;
     delete m_server;
 }
@@ -268,7 +268,15 @@ void QtMockWebServer::setBodyLimit(int maxBodyLength)
 
 RecordedRequest QtMockWebServer::takeRequest()
 {
+    QMutexLocker locker(&m_mutex);
     return m_requestQueue.dequeue();
+}
+
+void QtMockWebServer::enqueueRequest(const RecordedRequest &request)
+{
+    QMutexLocker locker(&m_mutex);
+    m_requestQueue.enqueue(request);
+    m_requestCount++;
 }
 
 int QtMockWebServer::requestCount() const
