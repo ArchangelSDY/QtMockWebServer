@@ -4,11 +4,10 @@ include_directories(
 	${CMAKE_CURRENT_BINARY_DIR}
 )
 
+set(CMAKE_AUTOMOC ON)
+
 file(GLOB SRCS "*.cpp")
 file(GLOB PUBLIC_HEADERS "*.h")
-
-qt_wrap_cpp(MOC_SRCS ${PUBLIC_HEADERS})
-set(SRCS ${SRCS} ${MOC_SRCS})
 
 add_library(qtmockwebserver ${SRCS})
 set_target_properties(qtmockwebserver PROPERTIES VERSION 1.0.0 SOVERSION 1)
