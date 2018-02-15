@@ -216,15 +216,21 @@ public:
     {
     }
 
+    void waitForDone()
+    {
+        m_threadPool.waitForDone();
+    }
+
 protected:
     virtual void incomingConnection(qintptr socketDescriptor)
     {
-        QThreadPool::globalInstance()->start(
+        m_threadPool.start(
             new ConnectionHandler(m_server, socketDescriptor));
     }
 
 private:
     QtMockWebServer *m_server;
+    QThreadPool m_threadPool;
 };
 
 
@@ -239,7 +245,7 @@ QtMockWebServer::QtMockWebServer() :
 
 QtMockWebServer::~QtMockWebServer()
 {
-    QThreadPool::globalInstance()->waitForDone();
+    m_server->waitForDone();
     delete m_dispatcher;
     delete m_server;
 }
