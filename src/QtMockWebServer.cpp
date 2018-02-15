@@ -14,7 +14,7 @@
 
 
 #include <QDebug>
-#include <QHostInfo>
+#include <QHostAddress>
 #include <QRunnable>
 #include <QTcpServer>
 #include <QTcpSocket>
@@ -251,7 +251,7 @@ int QtMockWebServer::port() const
 
 QString QtMockWebServer::hostName() const
 {
-    return QHostInfo::localHostName();
+    return QHostAddress(QHostAddress::LocalHost).toString();
 }
 
 QUrl QtMockWebServer::getUrl(const QString &path)
@@ -297,7 +297,7 @@ void QtMockWebServer::play()
 
 void QtMockWebServer::play(int port)
 {
-    if (m_server->listen(QHostAddress::Any, port)) {
+    if (m_server->listen(QHostAddress::LocalHost, port)) {
         m_port = m_server->serverPort();
     } else {
         qWarning() << m_server->errorString();
