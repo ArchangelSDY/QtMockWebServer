@@ -1,15 +1,11 @@
 project (QtMockWebServer)
 cmake_minimum_required(VERSION 2.8.11)
 
-find_package(Qt5Core QUIET)
-find_package(Qt5Network QUIET)
-
-set(QTCORE_LIBRARIES ${Qt5Core_LIBRARIES})
-# if there is no QT_ROOT, try to deduce it from Qt QtCore include
-if ("${QT_ROOT}" STREQUAL "")
-    set(QT_ROOT ${QT_QTCORE_INCLUDE_DIR}/../..)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt6 COMPONENTS Core Network Test REQUIRED)
+if (NOT Qt6_FOUND)
+    find_package(Qt5 5.15 COMPONENTS Core Network Test REQUIRED)
 endif()
-include_directories(${Qt5Core_INCLUDE_DIRS})
 
 # All build libraries are moved to this directory
 SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})

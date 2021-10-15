@@ -11,7 +11,7 @@ file(GLOB PUBLIC_HEADERS "*.h")
 
 add_library(qtmockwebserver ${SRCS})
 set_target_properties(qtmockwebserver PROPERTIES VERSION 1.0.0 SOVERSION 1)
-target_link_libraries(qtmockwebserver Qt5::Core Qt5::Network)
+target_link_libraries(qtmockwebserver Qt::Core Qt::Network)
 
 if(BUILD_SHARED_LIBS)
     install(FILES ${PUBLIC_HEADERS} DESTINATION include/qtmockwebserver)
